@@ -1,0 +1,37 @@
+<div class="container" [formGroup]="form">
+  <h2>{{ id === 0 ? 'Nuevo Cliente' : 'Editar Cliente' }}</h2>
+
+  <div class="grid">
+    <mat-form-field appearance="outline">
+      <mat-label>RUC</mat-label>
+      <input matInput formControlName="ruc" maxlength="11">
+      <mat-error *ngIf="form.controls['ruc'].invalid">RUC inválido</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Razón Social</mat-label>
+      <input matInput formControlName="razonSocial">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Teléfono</mat-label>
+      <input matInput formControlName="telefono">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Correo</mat-label>
+      <input matInput formControlName="correo">
+      <mat-error *ngIf="form.controls['correo'].invalid">Correo inválido</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="col-span">
+      <mat-label>Dirección</mat-label>
+      <input matInput formControlName="direccion">
+    </mat-form-field>
+  </div>
+
+  <div class="actions">
+    <button mat-flat-button color="primary" (click)="guardar()">Guardar</button>
+    <button mat-button (click)="volver()">Volver</button>
+  </div>
+</div>

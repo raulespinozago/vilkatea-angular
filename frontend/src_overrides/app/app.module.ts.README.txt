@@ -1,0 +1,3 @@
+
+/* This file is applied as override; Angular CLI will have its own app.module.ts generated.
+   Make sure HttpClientModule, ReactiveFormsModule, and Mat modules are imported. */

@@ -1,0 +1,35 @@
+@host = https://localhost:7080
+
+### Listar (q opcional)
+GET {{host}}/api/clientes?q=ACME
+
+### Crear
+POST {{host}}/api/clientes
+Content-Type: application/json
+
+{
+  "ruc": "20654321098",
+  "razonSocial": "NUEVA EMPRESA SAC",
+  "telefono": "987654321",
+  "correo": "info@nueva.pe",
+  "direccion": "Av. Demo 456"
+}
+
+### Obtener por id
+GET {{host}}/api/clientes/1
+
+### Actualizar
+PUT {{host}}/api/clientes/1
+Content-Type: application/json
+
+{
+  "id": 1,
+  "ruc": "20123456789",
+  "razonSocial": "ACME S.A.C. (ACT)",
+  "telefono": "012345678",
+  "correo": "contacto@acme.pe",
+  "direccion": "Av. Siempre Viva 123"
+}
+
+### Eliminar
+DELETE {{host}}/api/clientes/1
